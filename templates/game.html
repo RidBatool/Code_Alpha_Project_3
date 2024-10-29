@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Word</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='game.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Guess the Word</h1>
+        <h1 class="emoji">{{ emoji }}</h1>
+        <p class="clue">Clue: {{ clue }}</p>
+        <p class="lifeline">Lifeline: {{ lifeline }}</p>
+        <p class="score">Score: {{ score }}</p>
+        <p class="dash">{{ dash }}</p>
+        <div class="entry">
+            <form action="/submit" method="post">
+                <input type="text" name="guess" placeholder="Enter your guess" maxlength="{{ max_size }}" autocomplete="off" required>
+                <button class="submit" type="submit">Submit Guess</button>
+            </form>
+        </div>
+    </div>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
+
